@@ -9,7 +9,7 @@ import joblib
 
 
 #get the data
-df = pd.read_csv('/Users/ron.snir/Documents/python_test/dataset.csv', sep=';')
+df = pd.read_csv('/home/ubuntu/aws/dataset.csv', sep=';')
 
 #split the data for train (exclude test)
 df_train = df[df['default'].notnull()]
