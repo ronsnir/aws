@@ -10,7 +10,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['POST'])
 def hello_from_ron():
     return 'Hello from Ron!'
 
