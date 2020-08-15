@@ -1,5 +1,5 @@
 # Import libraries
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import joblib
 import traceback
 import pandas as pd
@@ -9,6 +9,10 @@ import numpy as np
 # API definition
 
 app = Flask(__name__)
+
+@app.route('/')
+def hello_from_ron():
+    return 'Hello from Ron!'
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -221,10 +225,7 @@ def predict():
         return ('no model here to use')
 
 if __name__ == '__main__':
-    try:
-        port = int(sys.argv[1])
-    except:
-        port = 12345
+    app.run()
 
     rfc_over = joblib.load('rfc_over.pkl')
     print('rfc_over loaded')
