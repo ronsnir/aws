@@ -225,8 +225,7 @@ def predict():
         return ('no model here to use')
 
 if __name__ == '__main__':
-    app.run()
-
+    
     rfc_over = joblib.load('rfc_over.pkl')
     print('rfc_over loaded')
 
@@ -248,4 +247,4 @@ if __name__ == '__main__':
     X = joblib.load('X.pkl')
     print('X loaded')
 
-    app.run(port=port, debug=True)
+    app.run()
